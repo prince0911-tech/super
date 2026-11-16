@@ -1,0 +1,7 @@
+dataset,rows,columns,exact_duplicate_rows,missing_cells
+ball_by_ball.csv,200999,33,0,766466
+matches.csv,883,22,0,2736
+competitions.csv,141,4,0,0
+teams.csv,353,3,0,0
+playing_eleven.csv,28381,9,0,26012
+competition_team_player_mapping.csv,6413,6,0,0

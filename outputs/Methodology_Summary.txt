@@ -1,0 +1,77 @@
+SUPERR SELECTOR SEASON 2 — ANALYSIS NOTES
+
+DATA SCOPE
+- Completed IPL and T20I matches from the supplied source data.
+- Eligible matches: 813.
+- IPL matches: 362.
+- T20I matches: 451.
+- Delivery rows after excluding innings 3 and 4: 192235.
+
+PRESSURE DEFINITION
+Pressure is a custom contextual index, not an official cricket statistic.
+The top 20% of deliveries are classified as high
+pressure separately by match format and innings.
+
+Batting pressure:
+- First innings: 65% wickets-lost fraction + 35% innings progress.
+- Second innings: 50% required-run-rate percentile + 30% wickets-lost
+  fraction + 20% innings progress.
+
+Bowling pressure:
+- First innings: 40% innings progress + 35% current-run-rate percentile
+  + 25% wickets-in-hand fraction.
+- Second innings: 40% innings progress + 35% inverse required-run-rate
+  percentile + 25% wickets-in-hand fraction.
+
+PERFORMANCE DIFFERENCES
+Batters:
+- Strike-rate change: 50%.
+- Dot-ball-rate reduction: 20%.
+- Boundary-rate change: 15%.
+- Dismissal-rate improvement: 15%.
+
+Bowlers:
+- Economy improvement: 40%.
+- Wickets per 24 legal balls improvement: 25%.
+- Dot-ball-rate improvement: 20%.
+- Boundary-concession-rate improvement: 15%.
+
+Ratings are robust-standardized within format using median and scaled MAD,
+clipped to [-3, 3], then reliability-adjusted for ball and match sample sizes.
+The combined PPR is a custom index centered around 50, not a probability.
+
+ELIGIBILITY
+Batters: at least 30 pressure balls, 40 normal balls, 3 pressure matches,
+and 3 normal matches, within a format.
+Bowlers: at least 24 pressure legal balls, 48 normal legal balls,
+and 3 pressure matches and 3 normal matches, within a format.
+
+CONSISTENCY
+The report includes the percentage of pressure matches where the batter's
+strike rate was at least their normal baseline, or the bowler's economy was
+at or below their normal baseline. This is a diagnostic and is not an extra
+component in the PPR formula.
+
+IMPORTANT ASSUMPTIONS AND LIMITATIONS
+- The source stores revised-overs values as legal-ball limits (for example,
+  114 means 114 balls); missing limits default to 120 balls.
+- Wide, Overstep and other are treated as illegal deliveries; other extra types
+  are treated as legal unless identified otherwise in the source.
+- A wide is excluded from batter balls faced. A no-ball is included in balls
+  faced and excluded from legal balls.
+- Byes, leg-byes and penalty extras are excluded from bowler runs conceded.
+- Extras with a missing type label are handled using the numeric run fields;
+  inspect the data-quality audit for such records before final submission.
+- Bowler wickets include caught, bowled, LBW, stump and hit wicket dismissals.
+- Super Over innings (innings 3 and 4) and abandoned/no-result matches are
+  excluded from the main ranking.
+- Completed revised-target matches are retained and use the supplied revised
+  target where available.
+- The pressure threshold, weights and sample cutoffs are modelling choices;
+  rankings should be interpreted alongside the sensitivity results.
+- Match-level consistency is a simple directional diagnostic, not a measure
+  of statistical uncertainty.
+
+ELIGIBLE PLAYER POOLS
+- Batter player-format records: 187.
+- Bowler player-format records: 334.

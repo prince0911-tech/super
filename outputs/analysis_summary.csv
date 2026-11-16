@@ -1,0 +1,17 @@
+metric,value
+source_delivery_rows,200999
+source_match_rows,883
+eligible_matches,813
+eligible_ipl_matches,362
+eligible_t20i_matches,451
+analysis_delivery_rows,192235
+eligible_batter_format_records,187
+eligible_bowler_format_records,334
+unmatched_competition_matches,0
+unmatched_playing_xi_players,0
+unmatched_unplayed_xi_players,5
+unmatched_playing_xi_teams,0
+playing_xi_duplicate_player_match_key_rows,75
+playing_xi_duplicate_player_match_keys,35
+playing_xi_keys_with_conflicting_attributes,35
+unclassified_extra_rows_with_positive_extra_runs,2
