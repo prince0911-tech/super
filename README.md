@@ -2,6 +2,8 @@
 
 Season 2 pressure performance analysis for IPL and T20I cricket. The project includes a Python analysis pipeline and a Streamlit dashboard for exploring batter and bowler rankings.
 
+**Live dashboard:** [superr.streamlit.app](https://superr.streamlit.app)
+
 ## What it does
 
 - Scores pressure at delivery level from match context.
